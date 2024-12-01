@@ -10,11 +10,12 @@ from itertools import product
 
 count = 1 #this multiplies the combinations created below
 
+uniform = True
 
 # Define parameters
-NX = (256,)  
-NY = (256,)  
-NZ = (256,)
+NX = (16, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 256)  
+NY = (128,)  
+NZ = (128,)
 TT = (5,)    
 
 
@@ -48,10 +49,13 @@ def main():
 
     # Generate parameter rows based on P, Q, and calculated N_DIM values
     params = []
-            for counter in range(count):
-                    # Generate all other fixed combinations and append with calculated values
-                    for args_comb in product(NX, NY, NZ, TT):
-                        params.append(args_comb)
+    for counter in range(count):
+        if uniform:
+            for num_var in NX:
+                params.append((num_var, num_var, num_var, TT[0]))
+        else:# Generate all other fixed combinations and append with calculated values
+            for args_comb in product(NX, NY, NZ, TT):
+                params.append(args_comb)
 
     # Write all generated combinations to the CSV file
     generate_csv(params, args.output)

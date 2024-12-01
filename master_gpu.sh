@@ -19,7 +19,7 @@ RESULTS_FILENAME="HOPPER_GPU_NODE.csv" ## CHECK FIXED VALS? what are P and Q? ch
 NODES=1         # Maximum number of nodes available
 
 
-ID_TASK=34 #increment this!  ensures unique jobs when reading parameter files
+ID_TASK=37 #increment this!  ensures unique jobs when reading parameter files
 ###############################################################################
 
 CHICKEN=$ID_TASK # do not need to change this
@@ -48,7 +48,7 @@ echo "Job Name: $NAME"
 sbatch \
 --job-name "$NAME" \
 --partition condo \
---time 00:15:00 \
+--time 00:10:00 \
 --cpus-per-task=1 \
 --nodes $NODES \
 --gres=gpu:a100:1 \
