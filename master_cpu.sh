@@ -14,14 +14,17 @@
 
 ################# MODIFY HERE  ###############################################
 ###############################################################################
-RESULTS_FILENAME="HOPPER_SIZE_CPU.csv" ## CHECK FIXED VALS? what are P and Q? check!
+RESULTS_FILENAME="HOPPER_THREAD2_CPU.csv" ## CHECK FIXED VALS? what are P and Q? check!
 
-MIN_NODES=2         # Maximum number of nodes available
+MIN_NODES=1         # Maximum number of nodes available
 MAX_NODES=2
-MIN_PROCS_PER_NODE=8   # Processors per node
+MIN_PROCS_PER_NODE=1   # Processors per node
 MAX_PROCS_PER_NODE=8
 
-ID_TASK=153 #increment this!  ensures unique jobs when reading parameter files
+MIN_THREADS=1
+MAX_THREADS=32
+
+ID_TASK=66496 #increment this!  ensures unique jobs when reading parameter files
 ###############################################################################
 
 
@@ -34,8 +37,13 @@ module load  gcc/14.1.0-hw53
 module load python/3.12.5-p5m5
 # Loop over possible combinations of nodes and processors per node
 for NODES in $(seq $MIN_NODES $MAX_NODES); do
-    for PROCS in $(seq $MIN_PROCS_PER_NODE $MAX_PROCS_PER_NODE); do
-        # Skip combinations where processors are not evenly distributed across nodes
+  for PROCS in $(seq $MIN_PROCS_PER_NODE $MAX_PROCS_PER_NODE); do
+    for THREADS in $(seq $MIN_THREADS $MAX_THREADS); do
+
+        # Check if threads per process fit within the CPUs per node
+        if (( THREADS * PROCS > 32 )); then
+          continue
+        fi
 
         # Increment CHICKEN and select a name from the list
         CHICKEN=$((CHICKEN + 1))
@@ -50,18 +58,19 @@ for NODES in $(seq $MIN_NODES $MAX_NODES); do
     
         # Submit the Slurm job using the generated parameter file --nodelist=hopper[054-063] \ 49 is good, but not top
         # 50-51 seg fault   --exclude=hopper[049-051] \
+        export OMP_NUM_THREADS=$THREADS
 
         sbatch \
         --job-name "$NAME" \
         --partition general \
         --time 00:15:00 \
-        --cpus-per-task=1 \
+        --cpus-per-task=$THREADS \
         --nodes $NODES \
         --ntasks-per-node $PROCS \
         --mem 0  \
-        --export=ALL,ID_TASK=$ID_TASK,NODES=$NODES,RESULTS_FILENAME=$RESULTS_FILENAME \
+        --export=ALL,ID_TASK=$ID_TASK,NODES=$NODES,RESULTS_FILENAME=$RESULTS_FILENAME,THREAD_COUNT=$THREADS \
         --array "1-$(wc -l < tmp/$PARAM_FILE)" \
         cpu.slurm
-
     done
+  done
 done

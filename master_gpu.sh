@@ -19,7 +19,7 @@ RESULTS_FILENAME="HOPPER_GPU_SIZE.csv" ## CHECK FIXED VALS? what are P and Q? ch
 NODES=2         # Maximum number of nodes available
 
 
-ID_TASK=39 #increment this!  ensures unique jobs when reading parameter files
+ID_TASK=49 #increment this!  ensures unique jobs when reading parameter files
 ###############################################################################
 
 CHICKEN=$ID_TASK # do not need to change this

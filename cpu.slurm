@@ -6,10 +6,10 @@
 module load intel/20.0.4 hpcg
 
 
-export OMP_PROC_BIND=TRUE
-export OMP_PLACES=cores
+#export OMP_PROC_BIND=TRUE
+#export OMP_PLACES=cores
 
-export OMP_NUM_THREADS=1
+#export OMP_NUM_THREADS=$THREAD_COUNT
 
 # Set a place to record the results
 RESULTS_FILE=$SLURM_SUBMIT_DIR/results/${RESULTS_FILENAME}
@@ -71,14 +71,14 @@ $TT" > hpcg.dat
 #           2>&1 | tee HPCG.out
 
 
-srun --mpi=pmi2 --cpu-bind=cores xhpcg
+#srun --mpi=pmi2 --cpu-bind=cores xhpcg
 
-
-
+srun --mpi=pmi2   --cpu-bind=cores  xhpcg
 ##########################################################################################################################
 
 mv HPCG-Benchmark_*.txt  HPCG.out
 
+cat HPCG.out
 
 # Ensure HPL.out exists
 if [ ! -f HPCG.out ]; then
@@ -145,10 +145,10 @@ with open('$RESULTS_FILE', 'a') as f:
 
     # Write the header row only if the file does not exist
     if not file_exists:
-        writer.writerow(['NX','NY','NZ','TT','SLURM_NNODES','GPUS','TASKS_PER_NODE','SLURM_JOB_NODELIST','TIME','GFLOPS'])
+        writer.writerow(['NX','NY','NZ','TT','SLURM_NNODES','GPUS','TASKS_PER_NODE','OMP_NUM_THREADS','SLURM_JOB_NODELIST','TIME','GFLOPS'])
 
     # Write the data row
-    writer.writerow([$NX, $NY, $NZ, $TT, $SLURM_NNODES, 0,$SLURM_NTASKS_PER_NODE,STRING_NODELIST, $TIME, $GFLOPS])"
+    writer.writerow([$NX, $NY, $NZ, $TT, $SLURM_NNODES, 0,$SLURM_NTASKS_PER_NODE, $OMP_NUM_THREADS,STRING_NODELIST, $TIME, $GFLOPS])"
 
 fi
 sed -i 's/\r//' $RESULTS_FILE
