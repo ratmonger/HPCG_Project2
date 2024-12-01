@@ -13,10 +13,10 @@ count = 1 #this multiplies the combinations created below
 uniform = True
 
 # Define parameters
-NX = (16,)  
+NX = (64,)  
 NY = (128,)  
 NZ = (128,)
-TT = (5,)    
+TT = (30,)    
 
 
 def parse_arguments():

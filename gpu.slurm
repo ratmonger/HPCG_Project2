@@ -150,10 +150,10 @@ with open('$RESULTS_FILE', 'a') as f:
 
     # Write the header row only if the file does not exist
     if not file_exists:
-        writer.writerow(['NX','NY','NZ','TT','SLURM_NNODES','SLURM_JOB_NODELIST','TIME','GFLOPS'])
+        writer.writerow(['NX','NY','NZ','TT','SLURM_NNODES','GPUS','TASKS_PER_NODE','SLURM_JOB_NODELIST','TIME','GFLOPS'])
 
     # Write the data row
-    writer.writerow([$NX, $NY, $NZ, $TT, $SLURM_NNODES,STRING_NODELIST, $TIME, $GFLOPS])"
+    writer.writerow([$NX, $NY, $NZ, $TT, $SLURM_NNODES, $SLURM_NNODES,$SLURM_NTASKS_PER_NODE,STRING_NODELIST, $TIME, $GFLOPS])"
 
 fi
 sed -i 's/\r//' $RESULTS_FILE

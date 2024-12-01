@@ -71,7 +71,7 @@ $TT" > hpcg.dat
 #           2>&1 | tee HPCG.out
 
 
-srun --mpi=pmi2 --cpu-bind=cores xhpcg 2>&1 | tee HPCG.out
+srun --mpi=pmi2 --cpu-bind=cores xhpcg
 
 
 
@@ -148,7 +148,7 @@ with open('$RESULTS_FILE', 'a') as f:
         writer.writerow(['NX','NY','NZ','TT','SLURM_NNODES','GPUS','TASKS_PER_NODE','SLURM_JOB_NODELIST','TIME','GFLOPS'])
 
     # Write the data row
-    writer.writerow([$NX, $NY, $NZ, $TT, $SLURM_NNODES, $SLURM_NNODES,$SLURM_NTASKS_PER_NODE,STRING_NODELIST, $TIME, $GFLOPS])"
+    writer.writerow([$NX, $NY, $NZ, $TT, $SLURM_NNODES, 0,$SLURM_NTASKS_PER_NODE,STRING_NODELIST, $TIME, $GFLOPS])"
 
 fi
 sed -i 's/\r//' $RESULTS_FILE

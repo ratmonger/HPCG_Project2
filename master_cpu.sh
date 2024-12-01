@@ -18,10 +18,10 @@ RESULTS_FILENAME="HOPPER_2NODE_CPU.csv" ## CHECK FIXED VALS? what are P and Q? c
 
 MIN_NODES=1         # Maximum number of nodes available
 MAX_NODES=1
-MIN_PROCS_PER_NODE=32   # Processors per node
-MAX_PROCS_PER_NODE=32
+MIN_PROCS_PER_NODE=1   # Processors per node
+MAX_PROCS_PER_NODE=1
 
-ID_TASK=12 #increment this!  ensures unique jobs when reading parameter files
+ID_TASK=14 #increment this!  ensures unique jobs when reading parameter files
 ###############################################################################
 
 
@@ -34,11 +34,8 @@ module load  gcc/14.1.0-hw53
 module load python/3.12.5-p5m5
 # Loop over possible combinations of nodes and processors per node
 for NODES in $(seq $MIN_NODES $MAX_NODES); do
-    for PROCS in $(seq $((NODES * MIN_PROCS_PER_NODE)) $((NODES * MAX_PROCS_PER_NODE))); do
+    for PROCS in $(seq $MIN_NODES $MAX_NODES); do
         # Skip combinations where processors are not evenly distributed across nodes
-        if (( PROCS % NODES != 0 )); then
-            continue
-        fi
 
         # Increment CHICKEN and select a name from the list
         CHICKEN=$((CHICKEN + 1))
@@ -56,12 +53,12 @@ for NODES in $(seq $MIN_NODES $MAX_NODES); do
 
         sbatch \
         --job-name "$NAME" \
-        --partition condo \
+        --partition debug \
         --time 00:15:00 \
         --cpus-per-task=1 \
         --nodes $NODES \
-        --ntasks-per-node $((PROCS / NODES)) \
-        --mem 0  \
+        --ntasks-per-node $PROCS \
+        --mem 8GB  \
         --export=ALL,ID_TASK=$ID_TASK,NODES=$NODES,RESULTS_FILENAME=$RESULTS_FILENAME \
         --array "1-$(wc -l < tmp/$PARAM_FILE)" \
         cpu.slurm
