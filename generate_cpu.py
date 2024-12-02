@@ -13,7 +13,7 @@ count = 1 #this multiplies the combinations created below
 uniform = True
 
 # Define parameters
-NX = (64,)  
+NX = (16,32,48,64,80,96,112,128,144)
 NY = (64,)  
 NZ = (64,)
 TT = (30,)    

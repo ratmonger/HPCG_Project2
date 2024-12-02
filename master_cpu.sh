@@ -14,17 +14,17 @@
 
 ################# MODIFY HERE  ###############################################
 ###############################################################################
-RESULTS_FILENAME="HOPPER_THREAD2_CPU.csv" ## CHECK FIXED VALS? what are P and Q? check!
+RESULTS_FILENAME="HOPPER_SIZE2_CPU.csv" ## CHECK FIXED VALS? what are P and Q? check!
 
-MIN_NODES=1         # Maximum number of nodes available
+MIN_NODES=2         # Maximum number of nodes available
 MAX_NODES=2
-MIN_PROCS_PER_NODE=1   # Processors per node
+MIN_PROCS_PER_NODE=8   # Processors per node
 MAX_PROCS_PER_NODE=8
 
-MIN_THREADS=1
-MAX_THREADS=32
+MIN_THREADS=2
+MAX_THREADS=2
 
-ID_TASK=66496 #increment this!  ensures unique jobs when reading parameter files
+ID_TASK=664991 #increment this!  ensures unique jobs when reading parameter files
 ###############################################################################
 
 
