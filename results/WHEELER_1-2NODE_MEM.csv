@@ -1,0 +1,11 @@
+NX,NY,NZ,TT,SLURM_NNODES,GPUS,TASKS_PER_NODE,OMP_NUM_THREADS,SLURM_JOB_NODELIST,MEM_SEFF,TIME,GFLOPS
+4,4,4,30,1,0,2,1,wheeler127,82.87 MB (estimated maximum),28.2351,2.67116
+8,8,8,30,1,0,2,1,wheeler127,2.90 MB (estimated maximum),28.2904,2.71044
+12,12,12,30,1,0,2,1,wheeler127,2.90 MB (estimated maximum),28.2337,2.7049
+16,16,16,30,1,0,2,1,wheeler127,2.90 MB (estimated maximum),27.9387,2.69488
+24,24,24,30,1,0,2,1,wheeler127,124.32 MB (estimated maximum),30.9276,2.02103
+32,32,32,30,1,0,2,1,wheeler127,157.92 MB (estimated maximum),30.9438,1.77752
+40,40,40,30,1,0,2,1,wheeler127,209.12 MB (estimated maximum),31.2095,1.71509
+48,48,48,30,1,0,2,1,wheeler127,274.90 MB (estimated maximum),32.016,1.69916
+56,56,56,30,1,0,2,1,wheeler127,386.73 MB (estimated maximum),33.0436,1.69188
+64,64,64,30,1,0,2,1,wheeler127,520.64 MB (estimated maximum),33.5935,1.66321

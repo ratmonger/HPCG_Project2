@@ -1,0 +1,25 @@
+NX,NY,NZ,TT,SLURM_NNODES,GPUS,TASKS_PER_NODE,OMP_NUM_THREADS,SLURM_JOB_NODELIST,MEM_SEFF,TIME,GFLOPS
+4,4,4,30,1,0,2,1,wheeler137,103.91 MB (estimated maximum),27.9307,2.7687
+4,4,4,30,1,0,2,1,wheeler137,2.90 MB (estimated maximum),28.3562,2.76082
+4,4,4,30,1,0,2,1,wheeler137,85.34 MB (estimated maximum),28.4178,2.76618
+8,8,8,30,1,0,2,1,wheeler137,2.89 MB (estimated maximum),28.1154,2.75507
+12,12,12,30,1,0,2,1,wheeler137,2.89 MB (estimated maximum),28.7431,2.7599
+16,16,16,30,1,0,2,1,wheeler137,2.90 MB (estimated maximum),26.2678,2.75398
+24,24,24,30,1,0,2,1,wheeler137,125.83 MB (estimated maximum),30.6249,2.07547
+32,32,32,30,1,0,2,1,wheeler137,149.45 MB (estimated maximum),30.2629,1.85057
+40,40,40,30,1,0,2,1,wheeler137,202.17 MB (estimated maximum),31.161,1.78528
+48,48,48,30,1,0,2,1,wheeler137,277.23 MB (estimated maximum),30.8135,1.76355
+56,56,56,30,1,0,2,1,wheeler137,389.96 MB (estimated maximum),32.0617,1.74156
+64,64,64,30,1,0,2,1,wheeler137,516.02 MB (estimated maximum),32.3834,1.72404
+4,4,4,30,2,0,1,1,wheeler[127 137],2.09 MB (estimated maximum),27.4382,2.70566
+4,4,4,30,2,0,1,1,wheeler[127 137],2.10 MB (estimated maximum),27.2079,2.70677
+4,4,4,30,2,0,1,1,wheeler[127 137],2.09 MB (estimated maximum),26.444,2.72092
+8,8,8,30,2,0,1,1,wheeler[127 137],2.09 MB (estimated maximum),27.1744,2.71783
+12,12,12,30,2,0,1,1,wheeler[127 137],2.09 MB (estimated maximum),27.2269,2.71295
+16,16,16,30,2,0,1,1,wheeler[127 137],2.08 MB (estimated maximum),27.2517,2.70559
+24,24,24,30,2,0,1,1,wheeler[127 137],139.35 MB (estimated maximum),29.9121,2.88461
+32,32,32,30,2,0,1,1,wheeler[127 137],171.30 MB (estimated maximum),30.2933,2.51791
+40,40,40,30,2,0,1,1,wheeler[127 137],221.73 MB (estimated maximum),29.6058,2.52174
+48,48,48,30,2,0,1,1,wheeler[127 137],298.15 MB (estimated maximum),30.6314,2.50267
+56,56,56,30,2,0,1,1,wheeler[127 137],407.00 MB (estimated maximum),32.2983,2.46694
+64,64,64,30,2,0,1,1,wheeler[127 137],539.42 MB (estimated maximum),30.4519,2.41835
