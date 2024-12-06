@@ -1,0 +1,54 @@
+NX,NY,NZ,TT,SLURM_NNODES,GPUS,TASKS_PER_NODE,OMP_NUM_THREADS,SLURM_JOB_NODELIST,MEM_SEFF,TIME,GFLOPS
+4,4,4,30,1,0,8,1,wheeler013,436.34 MB (estimated maximum),27.1751,9.1773
+8,8,8,30,1,0,8,1,wheeler013,378.72 MB (estimated maximum),27.0758,8.92147
+12,12,12,30,1,0,8,1,wheeler032,388.34 MB (estimated maximum),27.4307,9.08581
+16,16,16,30,1,0,8,1,wheeler013,376.47 MB (estimated maximum),27.1019,9.19448
+24,24,24,30,1,0,8,1,wheeler013,422.88 MB (estimated maximum),22.1393,4.86335
+32,32,32,30,1,0,8,1,wheeler032,618.44 MB (estimated maximum),31.0929,4.62805
+40,40,40,30,1,0,8,1,wheeler013,835.00 MB (estimated maximum),30.885,4.44711
+48,48,48,30,1,0,8,1,wheeler073,1.12 GB (estimated maximum),32.8343,4.36363
+56,56,56,30,1,0,8,1,wheeler008,1.56 GB (estimated maximum),35.1457,4.33262
+64,64,64,30,1,0,8,1,wheeler032,2.08 GB (estimated maximum),35.2066,4.31765
+72,72,72,30,1,0,8,1,wheeler013,2.77 GB (estimated maximum),38.152,4.26301
+4,4,4,30,2,0,8,1,wheeler[032 044],755.31 MB (estimated maximum),25.5842,12.8286
+80,80,80,30,1,0,8,1,wheeler066,3.67 GB (estimated maximum),35.187,4.23411
+8,8,8,30,2,0,8,1,wheeler[013 032],877.81 MB (estimated maximum),25.6008,12.8258
+12,12,12,30,2,0,8,1,wheeler[044 066],784.25 MB (estimated maximum),26.3018,12.8037
+88,88,88,30,1,0,8,1,wheeler073,4.69 GB (estimated maximum),46.8188,4.23951
+16,16,16,30,2,0,8,1,wheeler[013 032],1.01 GB (estimated maximum),26.1932,13.1422
+96,96,96,30,1,0,8,1,wheeler008,6.02 GB (estimated maximum),32.6993,3.9501
+24,24,24,30,2,0,8,1,wheeler[044 066],1.17 GB (estimated maximum),17.6301,9.26797
+40,40,40,30,2,0,8,1,wheeler[013 032],1.92 GB (estimated maximum),31.5163,8.77282
+32,32,32,30,2,0,8,1,wheeler[008 073],1.52 GB (estimated maximum),30.5391,8.89281
+48,48,48,30,2,0,8,1,wheeler[044 066],2.54 GB (estimated maximum),33.2413,8.6603
+56,56,56,30,2,0,8,1,wheeler[008 073],3.37 GB (estimated maximum),29.5773,8.61285
+64,64,64,30,2,0,8,1,wheeler[013 032],4.47 GB (estimated maximum),35.6853,8.54318
+72,72,72,30,2,0,8,1,wheeler[044 066],5.88 GB (estimated maximum),38.6616,8.43747
+80,80,80,30,2,0,8,1,wheeler[008 073],7.81 GB (estimated maximum),35.7923,8.34528
+88,88,88,30,2,0,8,1,wheeler[013 032],9.72 GB (estimated maximum),47.3172,8.41108
+96,96,96,30,2,0,8,1,wheeler[044 066],12.38 GB (estimated maximum),31.0202,8.32822
+4,4,4,30,3,0,8,1,wheeler[008 013 032],1.50 GB (estimated maximum),26.9629,13.1803
+8,8,8,30,3,0,8,1,wheeler[044 066 073],1.29 GB (estimated maximum),26.7968,13.0269
+12,12,12,30,3,0,8,1,wheeler[008 013 032],1.85 GB (estimated maximum),25.7516,13.1871
+16,16,16,30,3,0,8,1,wheeler[044 066 073],1.44 GB (estimated maximum),26.6038,12.9818
+24,24,24,30,3,0,8,1,wheeler[008 013 032],1.48 GB (estimated maximum),18.8324,12.7352
+32,32,32,30,3,0,8,1,wheeler[008 013 032],2.39 GB (estimated maximum),31.4911,12.9569
+40,40,40,30,3,0,8,1,wheeler[044 066 073],2.99 GB (estimated maximum),32.2637,12.8727
+48,48,48,30,3,0,8,1,wheeler[008 013 032],3.93 GB (estimated maximum),29.9363,12.852
+56,56,56,30,3,0,8,1,wheeler[044 066 073],5.24 GB (estimated maximum),30.096,12.719
+64,64,64,30,3,0,8,1,wheeler[008 013 032],6.82 GB (estimated maximum),35.8994,12.7622
+72,72,72,30,3,0,8,1,wheeler[044 066 073],8.97 GB (estimated maximum),38.8862,12.6034
+80,80,80,30,3,0,8,1,wheeler[008 013 032],0.00 MB (estimated maximum),35.898,12.4938
+88,88,88,30,3,0,8,1,wheeler[044 066 073],14.77 GB (estimated maximum),47.5496,12.5556
+96,96,96,30,3,0,8,1,wheeler[008 013 032],18.76 GB (estimated maximum),31.1925,12.4497
+4,4,4,30,4,0,8,1,wheeler[008 013 032 044],0.00 MB (estimated maximum),27.2902,20.9337
+8,8,8,30,4,0,8,1,wheeler[008 013 032 044],2.32 GB (estimated maximum),26.0327,20.157
+12,12,12,30,4,0,8,1,wheeler[008 013 032 044],2.12 GB (estimated maximum),27.0499,20.4608
+16,16,16,30,4,0,8,1,wheeler[008 013 032 044],2.37 GB (estimated maximum),27.1614,20.1495
+24,24,24,30,4,0,8,1,wheeler[008 013 032 044],2.33 GB (estimated maximum),18.8064,17.4706
+32,32,32,30,4,0,8,1,wheeler[008 013 032 044],3.22 GB (estimated maximum),31.1993,17.516
+40,40,40,30,4,0,8,1,wheeler[008 013 032 044],4.05 GB (estimated maximum),32.2859,17.1824
+48,48,48,30,4,0,8,1,wheeler[008 013 032 044],5.39 GB (estimated maximum),30.1148,17.0489
+56,56,56,30,4,0,8,1,wheeler[008 013 032 044],6.98 GB (estimated maximum),29.9036,17.0832
+64,64,64,30,4,0,8,1,wheeler[066 073-074 102],9.10 GB (estimated maximum),36.0208,16.9679
+72,72,72,30,4,0,8,1,wheeler[008 013 032 044],11.95 GB (estimated maximum),38.7529,16.8763
